@@ -1,0 +1,40 @@
+<%- include('../partial/header') %>
+<!-- <%- include('../partial/navbar') %> -->
+<section class="m-5 p-5">
+    <div class="container-fluid mt-3">
+    <form class="needs-validation" action='/blogs' method=post novalidate>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="blog[title]" id="title" class="form-control" placeholder="enter title" required>
+            <div class="valid-feedback">
+                Nice Title!
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="img" class="form-label">Image URL</label>
+            <input type="text" name="blog[img]" class="form-control" id="img" placeholder="Enter image url" required>
+            <div class="valid-feedback">
+                Image url is ok
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="author" class="form-label">Author</label>
+            <input type="text" name="blog[author]" class="form-control" id="author" placeholder="Enter Author name" required>
+            <div class="valid-feedback">
+                look good
+            </div>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea name="blog[text]" class="form-control" placeholder="write your article here" id="floatingTextarea2" style="height: 100px" required></textarea>
+            <label for="floatingTextarea2">Article</label>
+            <div class="valid-feedback">
+                A Nice Article
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    
+</section>
+
+<%- include('../partial/footer') %>

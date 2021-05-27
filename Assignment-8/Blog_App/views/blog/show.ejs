@@ -1,0 +1,55 @@
+<%- include('../partial/header') %>
+<%- include('../partial/navbar') %>
+
+<div class="container"> 
+    <div class="card mb-3">
+        <div class="card-body" style="background-color:#dee2e6">
+          <h5 class="card-title"><%= blog.title %> </h5>
+          <img src="<%= blog.img %>" class="card-img-top" style="height:20%">
+          <h5 class="card-title mt-2"><%= blog.author %> </h5>
+          <p class="card-text"><%= blog.text %> </p>
+          <a class="btn btn-primary mb-2" href="/blogs/<%= blog._id %>/edit" role="button">Edit</a>
+          <form action="/blogs/<%=blog._id%>?_method=DELETE" method=post>
+              <button class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+    </div>
+    <fieldset class="p-3" style="border: 2px solid black">
+    <legend>Please comment here</legend>
+        <form action='/blogs/<%= blog._id %>/comment' method=post>
+        <div class="form-floating mb-3">
+        <input name="comment[nickname]" type="text" class="form-control" id="floatingInput" placeholder="Write your Nickname here">
+        <label for="floatingInput">Nickname</label>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea name="comment[comment]" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Comments</label>
+        </div>
+        <button class="btn btn-info mb-3 ms-2">Submit</button>
+        </form>
+    </fieldset>
+        <div class="card mt-3">
+        <% if(blog.comments.length !== 0){ %>
+        <div class="card-body">
+            <h5 class="card-title">comment</h5>
+            <% for(let comment of blog.comments){%>
+            <h6 class="card-subtitle mb-2 text-muted">Nickname: <%= comment.nickname %> </h6>
+            <p class="card-text">comment: <%= comment.comment %></p>
+            <!-- <div class="row">
+            <div class ="col-1">
+                <a class="btn btn-outline-success mb-2 ms-3" href="/blogs/<%= blog._id %>/comment/<%=comment._id%>/edit" role="button">Edit</a>
+            </div>
+            <div class="col-1">
+                <form class="col" action="/blogs/<%= blog._id %>/comment/<%=comment._id%>?_method=DELETE" method=post > 
+                <button class="btn btn-outline-danger mb-3">Delete</button>
+                </form>
+            </div>
+            </div> -->
+            <% } %>
+        </div>
+        <% } %>
+    </div>
+    <br><br>
+</div>
+
+<%- include('../partial/footer') %>

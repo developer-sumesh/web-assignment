@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background-color: #343a40;
+    font-size: 2rem;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+ul{
+    list-style: none;
+}
+
+li{
+    display: inline-block;
+    margin-right: 20px;
+    padding: 10px;
+}
+li:last-of-type{
+    position: absolute;
+    right: 40px ;
+}
+
+section{
+    width:100%;
+    height: auto;
+    background-color: #52b69a;   
+}
+.main-img img{
+    width:100%;
+    height: 500px;
+} 
+
+
+.Cards {
+    width: 100%;
+    padding: 3em 1em;
+  }
+  
+  .Cards > h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+  }
+  
+  .Cards__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+  
+    /* overflow-x: auto; */
+    padding: 1em 0.25em;
+  }
+  
+  /* .Cards__container::-webkit-scrollbar {
+    width: 0;
+  } */
+  
+  .Card {
+    min-height: 300px;
+    min-width: 200px;
+  
+    max-width: 250px;
+    padding: 0.75em;
+  
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border: 2px solid #e5c558;
+    border-radius: 0.5em;
+  
+    display: grid;
+    grid-template-areas:
+      'img img'
+      'hd hd'
+      'co co'
+      'of pr';
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 'offer offer', 'heading heading', 'content content',
+      'offer price';
+    gap: 0.75em;
+  }
+  
+  .Card .image {
+    grid-area: img;
+    width: 100%;
+  }
+  
+  .Card .heading {
+    grid-area: hd;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.125;
+  }
+  
+  .Card .content {
+    grid-area: co;
+    font-size: 0.8rem;
+    font-weight: 400;
+    /* font-weight: bold; */
+    color: rgb(111, 111, 111);
+    line-height: 1.25;
+  }
+  
+  .Card .offer {
+    grid-area: of;
+    font-size: 0.8rem;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    padding: 0.5em;
+    background: #e5c558;
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 2px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Card .price {
+    grid-area: pr;
+    font-size: 1rem;
+    color: #6930c3;
+    font-weight: bold;
+  
+    place-self: center;
+    text-align: center;
+  }
+  
+
+
+
+footer {
+    height: 150px;
+    padding: 1em;
+    background: rgb(50, 50, 50);
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  footer .left {
+    color: #fff;
+    flex: 1;
+  }
+  
+  footer .right ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  footer .right ul a {
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    color: #fff;
+  
+  }
